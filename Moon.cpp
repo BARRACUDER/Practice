@@ -37,7 +37,6 @@ void find_Path(std::vector<std::vector<int>> &Moon,
     Path.push_back(Moon[height-1][current]);
     time = Dp_Moon[height - 1][current];
     for (int i = height-2; i >= 0; --i) {
-        std::cout << current << " " << i << "\n";
         if (current == 0) {
             current = std::min_element(Dp_Moon[i].begin(), Dp_Moon[i].begin() + 2) - Dp_Moon[i].begin(); 
         } else {
@@ -70,5 +69,6 @@ int main() {
     for (auto j : Path) {
         std::cout << j << " ";
     }
+    std::cout << "\n";
     return 0;
 }
