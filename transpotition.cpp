@@ -1,6 +1,4 @@
-﻿// ConsoleApplication1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿
 #include <iostream>
 #include <vector>
 #include <string>
@@ -8,17 +6,16 @@
 int main()
 {
 	int n, k;
+	std::cout << "Enter lenght of the word and number of transposition:";
 	std::cin >> n >> k;
 	std::vector<int> partition(n), ans(n, 0);
 	std::string word;
+	std::cout << "Enter transposition code:\n";
 	for (int i = 0; i < n; i++) {
 		std::cin >> partition[i];
 		partition[i]--;
 	}
-	for (int i = 0; i < n; i++) {
-		std::cout << partition[i] << " ";
-	}
-	std::cout << '\n';
+	std::cout << "Enter transposited word:\n";
 	std::cin >> word;
 	for (int i = 0; i < n; i++) {
 		int num = i;
@@ -27,6 +24,7 @@ int main()
 		}
 		ans[num] = i;
 	}
+	std::cout << "Your restored word:\n";
 	for (int i = 0; i < n; i++) {
 		std::cout << word[ans[i]];
 	}

@@ -8,24 +8,27 @@
 int main()
 {
 	std::string word;
+	std::cout << "Enter number: ";
 	std::cin >> word;
+	std::cout << "Is this a car number?\n";
+	std::cout << "The answer is ";
 	if (word.size() != 6) {
-		std::cout << "NO";
+		std::cout << "NO\n";
 		return 0;
 	}
 	for (int i = 0; i < 6; i++) {
 		if ((i >= 1 && i <= 3) && !(static_cast<int>(word[i]) <= 57 && static_cast<int>(word[i]) >= 48)){
 			//std::cout << " " << word[i] << static_cast<int>(word[i]);
-			std::cout << "NO";
+			std::cout << "NO\n";
 			return 0;
 		}
 		if ((i == 0 || i == 4 || i == 5) && !(static_cast<int>(word[i]) <= 90 && static_cast<int>(word[i]) >= 65)) {
 			//std::cout << " " << word[i] << static_cast<int>(word[i]);
-			std::cout << "NO";
+			std::cout << "NO\n";
 			return 0;
 		}
 	}
-	std::cout << "YES";
+	std::cout << "YES\n";
 	return 0;
 }
 
